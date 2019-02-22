@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="cn.sanleny.javafxspringboot.controller.LoginController"
+          prefHeight="570.0" prefWidth="1160.0" alignment="center" hgap="10" vgap="10" styleClass="root">
+    <fx:script source="../static/js/fxml_example.js"/>
+   <!-- <fx:script>
+        function handleSubmitButtonAction() {
+            actiontarget.setText("Calling the JavaScript");
+        }
+    </fx:script>-->
+    <padding><Insets top="25" right="25" bottom="10" left="25"/></padding>
+
+    <!-- 第一行创建了一个Text对象并将其text值设置为Welcome。GridPane.columnIndex和GridPane.rowIndex属性指定了Text控件在网格中的位置。注意在网格布局中表示行和列的值均从0开始，将Text控件放到(0,0)表示将其放到第1列第1行。GridPane.columnSpan设置为2表示Welcome标题将在网格中横跨两列。
+
+第二行在网格的第0列第1行创建了一个Label对象，其文字内容为”User Name”，在第1列第1行创建了TextField对象。类似地，后续创建了另一个Label及其对应的PasswordField对象，并添加到网格中。
+
+在使用网格布局时 ，你可以显示网格线以便于调试。在这里，通过在<padding></padding>之后之后增加<gridLinesVisible>true</gridLinesVisible>元素来设置gridLinesVisible属性为true-->
+    <Text fx:id="welcometext" text="Welcome" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <HBox spacing="10" alignment="bottom_right"
+          GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Sign In" onAction="#handleSubmitButtonAction"/>
+        <Button text="Sign In1" onAction="handleSubmitButtonAction(event);"/>
+    </HBox>
+
+    <Text fx:id="actiontarget"
+          GridPane.columnIndex="0" GridPane.columnSpan="2"
+          GridPane.halignment="RIGHT" GridPane.rowIndex="6"/>
+
+    <stylesheets>
+        <URL value="@/static/css/Login.css" />
+    </stylesheets>
+</GridPane>
