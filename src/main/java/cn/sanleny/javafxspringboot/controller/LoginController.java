@@ -7,6 +7,7 @@ import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 
@@ -33,5 +34,9 @@ public class LoginController implements Initializable {
     @FXML public void handleSubmitButtonAction(ActionEvent event) {
         actiontarget.setText("Sign in button pressed");
         Application.showView(SecondView.class);
+    }
+
+    public void layoutAction(MouseEvent mouseEvent) {
+
     }
 }
